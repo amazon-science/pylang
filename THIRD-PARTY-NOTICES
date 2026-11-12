@@ -38,8 +38,8 @@ Citation:
 2. MBPP (Mostly Basic Python Problems)
 =======================================================================
 
-Source:    https://github.com/google-research/google-research/tree/master/mbpp
-           https://huggingface.co/datasets/google-research-datasets/mbpp
+Source:    https://huggingface.co/datasets/Muennighoff/mbpp
+           (original: https://github.com/google-research/google-research/tree/master/mbpp)
 Authors:   Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk
            Michalewski, David Dohan, Ellen Jiang, Carrie Cai, Michael Terry,
            Quoc Le, Charles Sutton (Google Research)

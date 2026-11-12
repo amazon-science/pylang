@@ -157,4 +157,4 @@ If you discover a potential security issue in this project we ask that you notif
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. See [LICENSE](LICENSE).
 
-This repository includes third-party data from MBPP and Codeforces (via [open-r1/codeforces](https://huggingface.co/datasets/open-r1/codeforces)), both licensed under CC BY 4.0. See [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES) for attribution details.
+This repository includes third-party data from MBPP (via [Muennighoff/mbpp](https://huggingface.co/datasets/Muennighoff/mbpp)) and Codeforces (via [open-r1/codeforces](https://huggingface.co/datasets/open-r1/codeforces)), both licensed under CC BY 4.0. See [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES) for attribution details.
