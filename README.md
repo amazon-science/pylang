@@ -12,8 +12,6 @@ into a language they have never seen. This repository contains:
 - `data/pylang_benchmark.json`: the 352-problem PyLang evaluation benchmark.
 - `data/pylangQuestion_test.jsonl`: the 251 Codeforces problems from the benchmark in chat format (system, user, and assistant turns, where the assistant turn is a PyLang solution).
 
-> Only the evaluation benchmark and tooling are released. The training data is not part of this release.
-
 ## Note
 
 This code is being released solely for academic and scientific reproducibility purposes, in support of the methods and findings described in the associated publication. Pull requests are not being accepted in order to maintain the code exactly as it was used in the paper.
