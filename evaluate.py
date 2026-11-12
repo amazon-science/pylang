@@ -1,7 +1,7 @@
 """
 Unified PyLang evaluator for both codeforces and MBPP problems.
 
-Loads from data/eval_unified_safe.json and branches evaluation strategy per-entry
+Loads from data/pylang_benchmark.json and branches evaluation strategy per-entry
 based on the `source` field:
 
   codeforces: extract first function → rename to solve() → strict output matching
@@ -10,8 +10,8 @@ based on the `source` field:
 A per-source (codeforces/mbpp) breakdown is printed automatically.
 
 Usage:
-    python evaluate_solutions_unified.py --solutions-dir MODEL/eval_solutions
-    python evaluate_solutions_unified.py --json-file solutions.json
+    python evaluate.py --solutions-dir MODEL/eval_solutions
+    python evaluate.py --json-file solutions.json
 """
 
 import os
@@ -28,7 +28,7 @@ from tqdm import tqdm
 MODEL_NAME = "pylang_generation_time_full_train_test15_algn_wt0dot01/"
 SOLUTIONS_DIR = f"{MODEL_NAME}/eval_solutions"
 JSON_FILE = None
-UNIFIED_EVAL_FILE = "data/eval_unified_safe.json"
+UNIFIED_EVAL_FILE = "data/pylang_benchmark.json"
 INTERPRETER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "interpreter.py")
 TIMEOUT = 30
 NUM_WORKERS = 8

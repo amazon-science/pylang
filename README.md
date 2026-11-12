@@ -8,8 +8,8 @@ pretraining corpus. It lets us test whether LLMs can carry their coding ability
 into a language they have never seen. This repository contains:
 
 - `interpreter.py`: the reference PyLang interpreter.
-- `evaluate_solutions_unified_v2_10s.py`: the evaluator used in the paper.
-- `data/eval_unified_safe_v2.json`: the 352-problem PyLang evaluation benchmark.
+- `evaluate.py`: the evaluator used in the paper.
+- `data/pylang_benchmark.json`: the 352-problem PyLang evaluation benchmark.
 - `data/pylangQuestion_test.jsonl`: the 251 Codeforces problems from the benchmark in chat format (system, user, and assistant turns, where the assistant turn is a PyLang solution).
 
 > Only the evaluation benchmark and tooling are released. The training data is not part of this release.
@@ -52,7 +52,7 @@ python3 interpreter.py program.pl
 
 ## Benchmark
 
-`data/eval_unified_safe_v2.json` is a list of 352 problems:
+`data/pylang_benchmark.json` is a list of 352 problems:
 
 | Source       | Problems | Test cases | Calling convention |
 |--------------|---------:|-----------:|--------------------|
@@ -72,9 +72,7 @@ Each entry has these fields:
 | `solution`          | Reference PyLang solution |
 | `original_id`       | ID of the problem in its source dataset |
 
-`v2` fixes several reference solutions from an earlier release and is the
-version to use. All 352 reference solutions pass 771/771 test cases under the
-evaluator.
+All 352 reference solutions pass 771/771 test cases under the evaluator.
 
 ## Evaluating a model
 
@@ -94,28 +92,28 @@ Solutions may be wrapped in a ```` ```pylang ```` code fence. The evaluator stri
 
 ```bash
 # From a directory of .pl files
-python3 evaluate_solutions_unified_v2_10s.py \
+python3 evaluate.py \
     --solutions-dir path/to/eval_solutions \
-    --eval-file data/eval_unified_safe_v2.json
+    --eval-file data/pylang_benchmark.json
 
 # From a JSON list of solutions
-python3 evaluate_solutions_unified_v2_10s.py \
+python3 evaluate.py \
     --json-file path/to/solutions.json \
-    --eval-file data/eval_unified_safe_v2.json
+    --eval-file data/pylang_benchmark.json
 ```
 
 | Flag              | Description |
 |-------------------|-------------|
 | `--solutions-dir` | Directory of `N.pl` solution files |
 | `--json-file`     | JSON list of solution strings (alternative to `--solutions-dir`) |
-| `--eval-file`     | Benchmark file. Always pass `data/eval_unified_safe_v2.json`. |
+| `--eval-file`     | Benchmark file (default: `data/pylang_benchmark.json`) |
 | `--workers`       | Number of parallel worker processes (default: 8) |
 
 To sanity-check your setup, run the evaluator on the reference solutions. It should report 352/352 problems passed:
 
 ```bash
-python3 -c "import json; d=json.load(open('data/eval_unified_safe_v2.json')); json.dump([x['solution'] for x in d], open('ref.json','w'))"
-python3 evaluate_solutions_unified_v2_10s.py --json-file ref.json --eval-file data/eval_unified_safe_v2.json
+python3 -c "import json; d=json.load(open('data/pylang_benchmark.json')); json.dump([x['solution'] for x in d], open('ref.json','w'))"
+python3 evaluate.py --json-file ref.json --eval-file data/pylang_benchmark.json
 ```
 
 ### How solutions are scored

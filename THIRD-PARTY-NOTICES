@@ -17,7 +17,7 @@ License:   Creative Commons Attribution 4.0 International (CC BY 4.0)
 Original problem statements are from https://codeforces.com.
 
 Used in:   data/pylangQuestion_test.jsonl,
-           data/eval_unified_safe_v2.json (entries with "source": "codeforces")
+           data/pylang_benchmark.json (entries with "source": "codeforces")
 
 Changes:   Problem statements, notes, and test inputs/outputs were selected
            and reformatted into chat-style prompts. Reference solutions were
@@ -46,7 +46,7 @@ Authors:   Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk
 License:   Creative Commons Attribution 4.0 International (CC BY 4.0)
              https://creativecommons.org/licenses/by/4.0/legalcode
 
-Used in:   data/eval_unified_safe_v2.json (entries with "source": "mbpp")
+Used in:   data/pylang_benchmark.json (entries with "source": "mbpp")
 
 Changes:   A subset of problems was selected. Task descriptions were extended
            with input/output format notes, and test assertions were converted
